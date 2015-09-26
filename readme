@@ -1,0 +1,57 @@
+DKSF_69_system consists of three components:
+-------------------------------------------
+
+- u-boot bootloader - this component is not meant to be changed by the user via the web. U-boot is programmed at production facility using MFGTool only.
+
+- linux kernel - This component can be programmed via the web upgrade process (there are two alternate kernel images on the device)
+
+- rootfs - component can be programmed via the web upgrade process. (there are two alternate rootfs images on the device)
+
+Source repository structure:
+----------------------------
+buildroot-2014.08 - This folder contains source code and build project for root file system. It includes all applications such as the web server and the application utility pwr220_16 that does all the work
+
+linux-3.9.11 - Linux kernel source code and build project
+
+u-boot-2013.4 - U-boot source code and build project
+
+Building the source code:
+=========================
+
+Building the rootfs:
+--------------------
+1. Change to buildroot-2014.08
+2. For a full rebuild, do
+make clean
+make
+3. Full rebuild may take long time (depending on your PC spec), on i7-4790K takes under 1 hour.
+4. When build is complete, the resulting output rootfs image file is
+/buildroot-2014.08/output/images/rootfs.tar.bz
+5. This file can then be either uploaded using the web (when the support for it is complete) or
+copy to MFGTool/Profiles/MX28 Linux Update/OS Firmware/files before programming into flash using MFGTool
+6. It is often easier to just rebuild only the package that's needed, to do that:
+make pwr220_16-clean
+make
+The above steps rebuild the pwe220_16 package and rebuild the new rootfs image in the /output/images
+
+Building the linux kernel:
+--------------------------
+1. Change to linux-3.9.11
+2. Execute the following commands:
+make mrproper - full clean
+make -j2 CROSS_COMPILE=/opt/arm-2011.03/bin/arm-none-linux-gnueabi- ARCH=arm mxs_defconfig
+make -j2 CROSS_COMPILE=/opt/arm-2011.03/bin/arm-none-linux-gnueabi- ARCH=arm menuconfig (save without changes)
+make -j4 CROSS_COMPILE=/opt/arm-2011.03/bin/arm-none-linux-gnueabi- ARCH=arm uImage (result in /arch/arm/boot)
+make -j4 CROSS_COMPILE=/opt/arm-2011.03/bin/arm-none-linux-gnueabi- ARCH=arm imx28-evk.dtb (to build dts file)
+3. The resulting uImage file can be used for web upgrade or can be programmed using MFGTool - copy it to:
+MFGTool/Profiles/MX28 Linux Update/OS Firmware/files before programming into flash
+
+Building the U-boot:
+--------------------
+cd u-boot-2013.4/
+./make_clean.sh
+make mx28evk_nand_config
+./make_uboot_sb.sh
+Copy uboot.sh to MFGTool files folder, should be renamed imx28_ivt_uboot.sb
+Folder location: MFGTool/Profiles/MX28 Linux Update/OS Firmware/files
+
