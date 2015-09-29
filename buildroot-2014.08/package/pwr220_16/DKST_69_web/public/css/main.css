@@ -1,0 +1,252 @@
+html, body {
+    height: 100%;
+}
+
+a {
+    /*text-decoration: underline;*/
+    cursor: pointer;
+}
+
+table, td, th {
+    border: 1px solid #808080;
+}
+
+td, th {
+    padding: 4px 4px;
+    font-size: 12px;
+}
+
+button {
+
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 20px 0 6px;
+}
+
+.noscroll {
+    overflow: hidden;
+}
+
+.container-fluid {
+    min-height: 100%;
+    padding-bottom: 31px;
+}
+
+.header, .footer, .content th, .menu .active a {
+    background: #efffcd;
+}
+
+.header {
+    border-bottom: 2px solid #dce9be;
+
+}
+
+.header .logo img {
+    margin: 15px 0;
+    max-height: 30px;
+}
+
+.header h1 {
+    line-height: 60px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+.header .info p {
+    margin: 10px 0 0;
+}
+
+.header .info p + p {
+    margin: 0 0 10px;
+}
+
+.header .notifications {
+    margin: 0;
+    line-height: 60px;
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px dashed #00f;
+}
+
+.footer {
+    border-top: 2px solid #dce9be;
+    font-size: 12px;
+    padding: 4px 15px 8px;
+    min-height: 31px;
+    width: 100%;
+}
+
+.menu ul {
+    list-style: none;
+    margin-top: 25px;
+    max-width: 260px;
+    padding: 0;
+}
+
+.menu a {
+    color: #000;
+    padding: 6px 10px;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+}
+
+.menu li.active a {
+    color: #99173c;
+}
+
+.condition {
+    margin: 0 4px 0 10px;
+}
+
+.condition.condition-on {
+    color: #006400;
+}
+
+.condition.condition-off {
+    color: #ff0000;
+}
+
+th {
+    text-align: center;
+}
+
+table.device th, table.network-settings th {
+    text-align: left;
+}
+
+.sensors td:first-child {
+    vertical-align: top;
+}
+
+.sensors .sensor-status.shutter {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px dashed #00f;
+}
+
+.sensors .sensor-status.shutter .fa-check {
+    margin-right: 3px;
+}
+
+.sensors .sensor-status.shutter .fa-angle-up {
+    margin-left: 4px;
+}
+
+.sensors .fa-check {
+    color: #006400;
+}
+
+.sensors .fa-exclamation-triangle {
+    color: #ff0000;
+}
+
+.sensors ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    padding-bottom: 40px;
+}
+
+.overlay {
+    /*display: none;*/
+    position: absolute;
+    background: rgba(0, 0, 0, .6);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.overlay.active {
+    display: inline;
+}
+
+.overlay .window {
+    border: 3px solid #000;
+    width: 420px;
+    max-height: 420px;
+    overflow: hidden;
+    display: block;
+    position: absolute;
+    margin-left: -210px;
+    margin-top: -210px;
+    left: 50%;
+    top: 50%;
+    background: #fff;
+    padding: 15px;
+}
+
+.overlay .window .content {
+    max-height: 344px;
+    overflow: auto;
+}
+
+.overlay .window .content table {
+    width: 100%;
+}
+
+.overlay .window .content table th {
+    text-align: center;
+}
+
+.overlay .window .buttons .save {
+    float: left;
+}
+
+.overlay .window .buttons .cancel {
+    float: right;
+}
+
+.table-no-border {
+    border-color: #fff;
+}
+
+.form-question {
+    border: 1px solid #080;
+    color: #000;
+    vertical-align: super;
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+
+.form-horizontal .control-label {
+    text-align: left;
+    font-weight: 400;
+}
+
+.form-group .validation-error, .warning {
+    color: #f00;
+    padding: 4px 10px;
+}
+
+button.refresh, button.datetime-edit {
+    filter: alpha(opacity=20);
+    opacity: .2;
+}
+
+button.refresh:hover, button.datetime-edit:hover {
+    filter: alpha(opacity=100);
+    opacity: 1;
+}
+
+h2 + .form-group{
+    margin-top: 20px;
+}
+
+#datetime.row{
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+#datetime.row > div{
+    padding-right: 5px;
+    padding-left: 5px;
+}

@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="header row">
+            <div class="logo col-md-4">
+                <img src="img/logo_text.png" alt="Netping Logo">
+            </div>
+            <div class="info col-md-8">
+                <div class="row">
+                    <div class="col-md-3"><h1>DKST 69</h1></div>
+                    <div class="col-md-4 info">
+                        <p>Имя: dkst.localhost</p>
+
+                        <p>Адрес: Москва, ул. Пушкина, 17</p>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#" class="notifications">Уведомления (3) <span class="fa fa-angle-down"></span></a>
+                    </div>
+                    <div class="col-md-2 text-right">
+                        <p>admin</p>
+                        <a>выход <span class="fa fa-sign-out"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page row">
+            <div class="menu col-md-4">
+                <ul>
+                    <li>
+                        <a href="index.html">Главная страница</a>
+                    </li>
+                    <li>
+                        <a href="admin.html">Администрирование</a>
+                    </li>
+                    <li>
+                        <a href="network-settings.html">Сетевые параметры</a>
+                    </li>
+                    <li>
+                        <a href="#">Настройки уведомлений</a>
+                    </li>
+                    <li>
+                        <a href="firmware.html">Прошивка</a>
+                    </li>
+                    <li>
+                        <a href="#">Журнал</a>
+                    </li>
+                    <li>
+                        <a href="#">Розетки</a>
+                    </li>
+                    <li>
+                        <a href="#">Датчики</a>
+                    </li>
+                    <li class="active">
+                        <a href="notifications.html">Уведомления</a>
+                    </li>
+                    <li>
+                        <a href="#">Отчёты</a>
+                    </li>
+                    <li>
+                        <a href="#">Логика</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="content col-md-8">
+
+                <h2>SNMP TRAP</h2>
+
+                <table class="users">
+                    <tr>
+                        <th>
+                            №
+                        </th>
+                        <th>
+                            Название<a href="#"><span class="form-question fa fa-question"></span></a>
+                        </th>
+                        <th>
+                            Адрес<a href="#"><span class="form-question fa fa-question"></span></a>
+                        </th>
+                        <th>
+                            Порт<a href="#"><span class="form-question fa fa-question"></span></a>
+                        </th>
+                        <th>
+                            Удалить
+                        </th>
+                    </tr>
+                    <tr>
+                        <td class="text-center">1</td>
+                        <td><input type="text" class="form-control" /></td>
+                        <td><input type="text" class="form-control" /></td>
+                        <td><input type="text" class="form-control" /></td>
+                        <td class="text-center"><span class="fa fa-times"></span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="text-right table-no-border">
+                            <button class="btn btn-default"><span class="fa fa-plus"></span> Добавить</button>
+                        </td>
+                    </tr>
+                </table>
+
+                <h2>SYSLOG</h2>
+
+                <table class="users">
+                    <tr>
+                        <th>
+                            №
+                        </th>
+                        <th>
+                            Название<a href="#"><span class="form-question fa fa-question"></span></a>
+                        </th>
+                        <th>
+                            Адрес<a href="#"><span class="form-question fa fa-question"></span></a>
+                        </th>
+                        <th>
+                            Удалить
+                        </th>
+                    </tr>
+                    <tr>
+                        <td class="text-center">1</td>
+                        <td><input type="text" class="form-control" /></td>
+                        <td><input type="text" class="form-control" /></td>
+                        <td class="text-center"><span class="fa fa-times"></span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="text-right table-no-border">
+                            <button class="btn btn-default"><span class="fa fa-plus"></span> Добавить</button>
+                        </td>
+                    </tr>
+                </table>
+
+                <form class="form-horizontal">
+                    <h2>E-mail</h2>
+
+                    <div class="form-group">
+                        <label for="hostname" class="col-sm-6 col-md-4 control-label text-left">
+                            Адрес SMTP сервера<a href="#"><span class="form-question fa fa-question"></span></a>
+                        </label>
+
+                        <div class="col-sm-6 col-md-4">
+                            <input type="text" class="form-control" id="smtp-address" placeholder="">
+
+                            <div class="validation-error">
+                            </div>
+                        </div>
+                        <hr class="col-sm-12 col-md-8" />
+                    </div>
+                    <div class="form-group">
+                        <label for="location" class="col-sm-6 col-md-4 control-label text-left">
+                            Порт SMTP сервера<a href="#"><span class="form-question fa fa-question"></span></a>
+                        </label>
+
+                        <div class="col-sm-6 col-md-4">
+                            <input type="text" class="form-control" id="smtp-port" placeholder="">
+
+                            <div class="validation-error">
+
+                            </div>
+                        </div>
+                        <hr class="col-sm-12 col-md-8" />
+                    </div>
+                    <div class="form-group">
+                        <label for="contacts" class="col-sm-6 col-md-4 control-label text-left">
+                            TLS шифрование<a href="#"><span class="form-question fa fa-question"></span></a>
+                        </label>
+
+                        <div class="col-sm-6 col-md-4">
+                            <input type="checkbox" class="checkbox" id="tls" placeholder="">
+
+                            <div class="validation-error">
+
+                            </div>
+                        </div>
+                        <hr class="col-sm-12 col-md-8" />
+                    </div>
+                    <div class="form-group">
+                        <label for="hostname" class="col-sm-6 col-md-4 control-label text-left">
+                            Имя пользователя<a href="#"><span class="form-question fa fa-question"></span></a>
+                        </label>
+
+                        <div class="col-sm-6 col-md-4">
+                            <input type="text" class="form-control" id="username" placeholder="">
+
+                            <div class="validation-error">
+                            </div>
+                        </div>
+                        <hr class="col-sm-12 col-md-8" />
+                    </div>
+                    <div class="form-group">
+                        <label for="hostname" class="col-sm-6 col-md-4 control-label text-left">
+                            Пароль<a href="#"><span class="form-question fa fa-question"></span></a>
+                        </label>
+
+                        <div class="col-sm-6 col-md-4">
+                            <input type="password" class="form-control" id="password" placeholder="">
+
+                            <div class="validation-error">
+                            </div>
+                        </div>
+                        <hr class="col-sm-12 col-md-8" />
+                    </div>
+                    <div class="form-group">
+                        <label for="hostname" class="col-sm-6 col-md-4 control-label text-left">
+                           От кого (from:)<a href="#"><span class="form-question fa fa-question"></span></a>
+                        </label>
+
+                        <div class="col-sm-6 col-md-4">
+                            <input type="text" class="form-control" id="from" placeholder="">
+
+                            <div class="validation-error">
+                            </div>
+                        </div>
+                        <hr class="col-sm-12 col-md-8" />
+                    </div>
+
+                    <h2>E-mail адреса:</h2>
+
+                    <table class="users">
+                        <tr>
+                            <th>
+                                №
+                            </th>
+                            <th>
+                                Название<a href="#"><span class="form-question fa fa-question"></span></a>
+                            </th>
+                            <th>
+                                Адрес<a href="#"><span class="form-question fa fa-question"></span></a>
+                            </th>
+                            <th>
+                                Удалить
+                            </th>
+                        </tr>
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td><input type="text" class="form-control" /></td>
+                            <td><input type="text" class="form-control" /></td>
+                            <td class="text-center"><span class="fa fa-times"></span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="text-right table-no-border">
+                                <button class="btn btn-default"><span class="fa fa-plus"></span> Добавить</button>
+                            </td>
+                        </tr>
+                    </table>
+
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-8">
+                            <hr />
+                            <input type="submit" class="btn btn-primary" value="Применить" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="col-xs-6">Copyright © ЗАО "Алентис Электроникс"</div>
+        <div class="col-xs-6 text-right">Время непрерывной работы: 3 д 14 ч 33 м 15 с</div>
+    </div>
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/overlay.js"></script>
+</body>
+</html>

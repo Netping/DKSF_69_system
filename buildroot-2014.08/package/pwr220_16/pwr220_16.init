@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# Running this script at startup is necessary to import configuration....
+#
+
+case "$1" in
+  start)
+ 	echo "Importing PWR220_16 configuration ..."
+	mkdir -p /mnt/cfg
+	mount -t ubifs ubi0_2 /mnt/cfg
+	/usr/bin/pwr220cmd import-cfg-/mnt/cfg/config1
+	;;
+  stop)
+	echo -n "Processing PWR220_16 config before exit..."
+	;;
+  restart|reload)
+	"$0" stop
+	"$0" start
+	;;
+  *)
+	echo "Usage: $0 {start|stop|restart}"
+	exit 1
+esac
+
+exit $?
+

@@ -1,0 +1,5 @@
+config BR2_PACKAGE_PWR220_16
+	bool "pwr220_16"
+	default y
+	help
+	  NetPing Pwr220_16 control software.
