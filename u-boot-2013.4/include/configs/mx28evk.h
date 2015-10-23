@@ -285,7 +285,7 @@
 		"fi\0" \
 	"script=boot.scr\0"	\
 	"uimage=uImage\0" \
-	"console_fsl=ttyAM0\0" \
+	"console_fsl=ttyAMA0\0" \
 	"console_mainline=ttyAMA0\0" \
 	"fdt_file=imx28-evk.dtb\0" \
 	"fdt_addr=0x41000000\0" \
@@ -343,8 +343,8 @@
 		"fi;\0" \
 		"enable_watchdog=mw.l 0x80056064 0x00020000; mw.l 0x80056004 0x00000018; mw.l 0x80056050 0x00007530;\0" \
 		"nextfs=rootfs0\0" \
-		"set_rootfs0=setenv nextfs rootfs0; setenv bootargs noinitrd console=ttyAM0,115200 ubi.mtd=1 root=ubi0:rootfs0 rootfstype=ubifs rw gpmi\0" \
-		"set_rootfs1=setenv nextfs rootfs0; setenv bootargs noinitrd console=ttyAM0,115200 ubi.mtd=1 root=ubi0:rootfs1 rootfstype=ubifs rw gpmi\0" \
+		"set_rootfs0=setenv nextfs rootfs0; setenv bootargs noinitrd console=ttyAMA0,115200 ubi.mtd=1 root=ubi0:rootfs0 rootfstype=ubifs rw gpmi\0" \
+		"set_rootfs1=setenv nextfs rootfs0; setenv bootargs noinitrd console=ttyAMA0,115200 ubi.mtd=1 root=ubi0:rootfs1 rootfstype=ubifs rw gpmi\0" \
 		"switch_rootfs=if test ${nextfs} = rootfs0; then run set_rootfs1; else run set_rootfs0; fi; saveenv\0" \
 		"set_scratch5=mw.l 0x800560B0 0x33333333\0" \
 		"set_next_fs=if itest.w *800560B0 == 33333333; then run switch_rootfs; fi;\0" \
@@ -367,6 +367,6 @@
 	"else run netboot; fi"
 #endif
 #define CONFIG_BOOTCOMMAND "run set_next_fs; run set_scratch5; run load_next_kernel; nand read 0x41000000 0x01388000 0x5000; run enable_watchdog; bootm 0x42000000 - 0x41000000"
-#define CONFIG_BOOTARGS "noinitrd console=ttyAM0,115200 ubi.mtd=1 root=ubi0:rootfs0 rootfstype=ubifs rw gpmi"
+#define CONFIG_BOOTARGS "noinitrd console=ttyAMA0,115200 ubi.mtd=1 root=ubi0:rootfs0 rootfstype=ubifs rw gpmi"
 
 #endif /* __MX28EVK_CONFIG_H__ */
